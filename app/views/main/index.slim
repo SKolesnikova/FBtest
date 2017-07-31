@@ -1,0 +1,15 @@
+.container-fluid
+  .row
+    .col-md-3
+      - @users.each do |user|
+        .user
+          = image_tag(user.image_uri || '')
+          = user.email
+    .col-md-9
+      .comment-form.hidden
+        = form_for(current_user.comments.new, url: comments_path) do |f|
+          = f.text_field :body, required: true
+      .comments
+        - @comments.each do |comment|
+          .comment
+            = comment.body
