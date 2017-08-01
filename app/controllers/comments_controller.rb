@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @comment = current_user.comments.find(params[:id])
+    @comment.update_attribute('body', params[:comment])
   end
 
   private
