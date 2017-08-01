@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :comments
 
+  validates :first_name, :last_name, :email, :presence => true
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -16,6 +18,10 @@ class User < ApplicationRecord
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
     end
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 
 end

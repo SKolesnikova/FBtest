@@ -16,6 +16,8 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass'
 gem 'slim-rails'
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
 
 # Jquery
 gem 'jquery-rails'

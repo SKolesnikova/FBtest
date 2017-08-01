@@ -1,2 +1,107 @@
 @import "bootstrap";
 @import "comments";
+@import "bootstrap-social";
+@import "font-awesome";
+
+html {
+  overflow-y: scroll;
+}
+
+a {
+  cursor: pointer;
+}
+
+body {
+}
+
+h2{
+  margin: 0 0 10px 0;
+}
+
+li{
+  font-size: 1.5em;
+}
+
+.container-fluid {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  min-height: 100%;
+  position: relative;
+  margin-top: 30px;
+  border-radius: 4px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.2);
+
+  @include container-fixed;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
+
+/* User */
+.user{
+  margin: 15px 10px;
+  padding: 10px;
+  border: 1px solid #dadada;
+    .email{
+      font-size: 1.3em;
+      padding: 15px;
+    }
+}
+
+.login-block{
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 15px;
+  width: 40%;
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  border-radius: 4px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.2);
+}
+
+.fb-button {
+  width: 100%;
+  margin: auto;
+  span{
+    padding-top: 5px ;
+  }
+  a{
+    font-size: 1.5em;
+    text-align: center;
+  }
+}
+
+.or{
+  padding-top: 15px;
+  text-align: center;
+}
+
+.actions{
+  margin-top: 15px;
+  input{
+    float: left;
+    font-size: 1.2em;
+  }
+}
+
+.pass{
+  float: right;
+  font-size: 1.2em;
+}
+
+#error_explanation{
+  color: red;
+  h2{
+    font-size: 1.2em;
+  }
+  li{
+    font-size: 1em;
+  }
+}

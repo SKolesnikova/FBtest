@@ -1,3 +1,38 @@
-.comment {
+.comments{
+  padding: 15px 10px;
+  .comment{
+    display: inline-flex;
+    width: 100%;
+    border: 1px solid #dadada;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    .comment-body {
+      cursor: default;
+    }
+    .comment-body[contenteditable] {
+      cursor: auto;
+    }
+  }
+  .comment-author{
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+}
+
+.comment-form {
+  margin-top: 15px;
   display: inline-flex;
+  width: 100%;
+  padding: 15px 0 5px 15px;
+  em{
+    font-weight: 500;
+    font-size: 1.1em;
+    padding-right: 5px;
+  }
+  form{
+    width: 70%;
+  }
+  #comment_body{
+    width: 50%;
+  }
 }

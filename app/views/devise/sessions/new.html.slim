@@ -1,0 +1,21 @@
+.container
+  .login-block
+    .col-centered
+      - if devise_mapping.omniauthable?
+        .fb-button
+          - resource_class.omniauth_providers.each do |provider|
+            = link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-block btn-social btn-facebook"
+              span.fa.fa-facebook
+              span Sign in with #{OmniAuth::Utils.camelize(provider)}
+        .or ИЛИ
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-group
+          = f.label :email
+          = f.email_field :email, autofocus: true, class: 'form-control'
+        .form-group
+          = f.label :password
+          = f.password_field :password, autocomplete: "off", class: 'form-control'
+
+        .actions
+          = f.submit "Логин", class: 'btn btn-primary'
+        = render "devise/shared/links"
